@@ -1,0 +1,36 @@
+main{
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(83, 83, 83);
+}
+
+button{
+    padding: 10px;
+    background-color: rgb(190, 190, 190);
+    border-radius: 5px;
+    border: 1px solid rgb(83, 83, 83);
+    cursor: pointer;
+}
+
+.err {
+    background-color: #ffe6e6;
+    border: 2px solid #e60000;
+    outline: none;
+}
+
+h2{
+    font-size: 40px;
+}

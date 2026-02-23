@@ -1,0 +1,25 @@
+
+
+#ratingNumber {
+    font-size: 30px;
+}
+
+#starsContainer{
+    display: flex;
+    width: 500px;
+    position: relative;
+    left: -250px;
+}
+
+.starRating{
+    background-image: url("https://pngimg.com/uploads/star/star_PNG41505.png");
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+}
+
+.starRatingHover{
+    background-image: url("https://www.citypng.com/public/uploads/preview/download-star-silhouette-orange-icon-png-735811696934096ugpfr7gzzd.png");
+    background-size: contain;
+    cursor: pointer;
+}

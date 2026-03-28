@@ -1,0 +1,92 @@
+main {
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+#cartContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Карточка товара */
+.cart-item {
+    background: var(--card);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    animation: fadeIn 0.4s ease;
+    transition: 0.3s;
+}
+
+.cart-item:hover {
+    transform: scale(1.02);
+}
+
+/* Информация */
+.cart-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.cart-item p {
+    color: var(--gray);
+}
+
+/* Кнопка удаления */
+.cart-item button {
+    background: var(--red);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cart-item button:hover {
+    background: var(--yellow);
+    color: black;
+}
+
+/* Итог */
+#totalPrice {
+    margin-top: 30px;
+    font-size: 20px;
+    text-align: right;
+}
+
+/* Кнопка покупки */
+#checkoutBtn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 25px;
+    border: none;
+    background: var(--red);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#checkoutBtn:hover {
+    background: var(--yellow);
+    color: black;
+}
+
+/* Пустая корзина */
+.empty-cart {
+    text-align: center;
+    color: var(--gray);
+    margin-top: 50px;
+}

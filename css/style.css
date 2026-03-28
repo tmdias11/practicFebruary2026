@@ -1,70 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+    --red: #ff3b3b;
+    --yellow: #ffd644;
+
+    --bg: #0f0f0f;
+    --card: #1a1a1a;
+    --text: #ffffff;
+    --gray: #b3b3b3;
+}
+
+body.light {
+    --bg: #ffffff;
+    --card: #f5f5f5;
+    --header: #ffffff;
+    --text: #111;
+    --gray: #555;
+}
+
 * {
-    margin: 0 auto;
-    font-size: 17px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-    transition: 0.4s;
-}
-
-a:hover{
-    color: rgb(83, 48, 138);
-    font-size: 20px;
-}
-
-header{
-    height: 40px;
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-top:25px;
-    background-color: rgb(255, 152, 152);
-}
-
-#logout{
-    cursor: pointer;
-    transition: 0.4s;
-}
-
-#logout:hover{
-    color: rgb(83, 48, 138);
-    font-size: 20px;
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
 }
 
 .hidden{
     display: none;
 }
 
-#movBody{
+#hidden{
+    display: none;
+}
+
+header {
+    min-height: 70px;
     display: flex;
+    align-items: center;
+    padding: 10px 5%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
     gap: 15px;
-    margin: 50px;
     flex-wrap: wrap;
 }
 
-.movie-card{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 3px 2px rgb(187, 187, 187);
-    width: 250px;
-    gap: 5px;
+#home {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--yellow);
+    text-decoration: none;
 }
 
-.movie-card h2{
-    font-size: 21px;
-    text-align: center; 
-    margin-bottom: 15px;
+header a, #logout {
+    color: var(--header);
+    transition: 0.3s;
+    text-decoration: none;
 }
 
-.movie-card img{
+header a:hover {
+    color: var(--yellow);
+}
+
+#search {
+    margin-left: auto;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    background: var(--card);
+    color: var(--text);
+    outline: none;
+}
+
+#changeTheme {
+    background-color: var(--yellow);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#movBody {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+.movie-card {
+    background: var(--card);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    animation: fadeIn 0.4s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.movie-card img {
     width: 100%;
-    height: 100%;
-    margin-top: 10px;
+    height: 280px;
+    object-fit: cover;
+}
+
+.movie-card h2 {
+    font-size: 18px;
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-card a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.movie-card a:hover {
+    color: var(--yellow);
+}
+
+.movie-card p {
+    padding: 0 10px 10px;
+    color: var(--gray);
+}
+
+#showMoreBtn, #adminPanelCatalogue button, #sort, #sortDir, #sortGenre {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    background: var(--red);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#sort, #sortDir, #sortGenre{
+    margin: 0;
+}
+
+.filters{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding: 30px;
+    gap: 10px;
+}
+
+#showMoreBtn:hover {
+    background: var(--yellow);
+    color: black;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #search {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #movBody {
+        padding: 20px;
+    }
+}
+
+#adminPanelCatalogue input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #222;
+    color: white;
+    margin-bottom: 10px;
 }

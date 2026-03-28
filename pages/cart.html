@@ -2,32 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WatchCritics</title>
+    <title>Корзина</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/cart.css">
     <script src="../js/script.js"></script>
+    <script type="module" src="../js/cart.js"></script>
     <script src="../js/auth.js" type="module"></script>
 </head>
 <body>
-    <header id="header">
+
+<header id="header">
         <a href="../index.html" id="home">WatchCritics</a>
         <input type="search" name="Searchbar" id="search" placeholder="Поиск...">
         <a href="./profile.html" id="profile">Профиль</a>
         <a href="./signin.html" id="signin">Войти</a>
         <a href="./signup.html" id="signup">Регистрация</a>
-        <a href="./cart.html">Корзина</a>
+        <a href="./pages/cart.html">Корзина</a>
         <p id="logout">Выйти</p>
         <button id="changeTheme" onclick="changeTheme()"></button>
     </header>
 
-    <main>
-        <form id="signinForm">
-            <input type="email" name="email" id="email" placeholder="Еmail">
-            <input type="password" name="password" id="password" placeholder="Пароль">
-            <button type="submit">Войти</button>
-        </form>
-        <a href="signup.html">Нет аккаунта?</a>
-    </main>
+<main>
+    <h1>Корзина билетов</h1>
+
+    <div id="cartContainer"></div>
+
+    <h3 id="totalPrice"></h3>
+
+    <button id="checkoutBtn">Купить билеты</button>
+</main>
+
 </body>
 </html>

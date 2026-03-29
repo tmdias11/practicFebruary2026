@@ -61,7 +61,8 @@ onAuthStateChanged(auth, async (user) => {
     } catch (err) {
         console.error("Ошибка auth:", err);
     }
-}
+}); 
+
 async function loadMovie() {
     if (!movieId || !container) {
         if (container) container.innerHTML = "<h2>Фильм не найден</h2>";

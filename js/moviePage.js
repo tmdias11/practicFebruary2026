@@ -38,12 +38,15 @@ let currentUserRole = "User";
 
 onAuthStateChanged(auth, async (user) => {
     try {
+        form?.classList.add("hidden");
+
         if (user) {
             currentUserUid = user.uid;
 
             const userSnap = await getDoc(doc(db, "users", user.uid));
             if (userSnap.exists()) {
                 currentUserRole = userSnap.data().role || "User";
+
                 if (currentUserRole === "Admin") {
                     form?.classList.remove("hidden");
                 }
@@ -58,7 +61,6 @@ onAuthStateChanged(auth, async (user) => {
     } catch (err) {
         console.error("Ошибка auth:", err);
     }
-});
 
 async function loadMovie() {
     if (!movieId || !container) {
